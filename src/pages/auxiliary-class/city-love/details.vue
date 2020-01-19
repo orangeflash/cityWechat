@@ -287,7 +287,7 @@
         if (!data.id) return data
 
         let city = '';
-        data.city && (city = data.city.split("-")[1]);
+        data.city && (city = data.city.split("-")[0]);
         if (city.length > 3) city = city.substring(0, 4) + "...";
 
         const photos = data.media.map(item => {

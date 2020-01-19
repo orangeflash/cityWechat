@@ -11,7 +11,7 @@
       <p>{{data.apartment&&data.apartment +" &nbsp;| &nbsp;"+ data.measure+"㎡&nbsp; | &nbsp;"+ (data.deposit ||
         data.communityName || '')}}</p>
       <div v-if="type" class="left-pic-right-txt_info_operation">
-        <span><em class="col-t fon-xl">{{data.rent}} </em > <span v-if="!isNaN(data.rent)&&data.rent">{{+data.identifying == 6?'万': +data.identifying == 5?'元/平':'元/月'}}</span></span>
+        <span><em class="col-t fon-xl">{{data.rent}} </em > <span v-if="!isNaN(data.rent)&&data.rent">{{+data.identifying == 6?'万': +data.identifying == 5?'THB/平':'THB/月'}}</span></span>
         <DdButton :type="type" :name="buttonName" @click="$emit('button')"></DdButton>
       </div>
       <div
@@ -21,7 +21,7 @@
           <i class="iconfont icon-dizhi2"></i>{{data.area}}
         </div>
         <div class="price"><em>{{data.rent}}</em>
-          <span v-if="!isNaN(data.rent)&&data.rent">{{+data.identifying == 6?'万': +data.identifying == 5?'元/平':'元/月'}}</span></div>
+          <span v-if="!isNaN(data.rent)&&data.rent">{{+data.identifying == 6?'万': +data.identifying == 5?'THB/平':'THB/月'}}</span></div>
       </div>
     </div>
   </div>
@@ -123,7 +123,7 @@
         }
 
         .price:after {
-          content: ' 元/月';
+          content: ' THB/月';
           font-size: 26px;
           color: #333;
         }

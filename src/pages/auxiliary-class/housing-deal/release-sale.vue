@@ -248,7 +248,7 @@
           ],
           used: [
             {
-              name: '价格(万元起)',
+              name: '价格(万THB起)',
               placeholder: '请输入价格',
               field: 'rent',
               desc: '',
@@ -382,7 +382,7 @@
         if (this.$route.query.rentingId) {
           this.releaseName = "重新发布"
         } else if (money > 0) {
-          this.releaseName = "需支付￥" + (+money).toFixed(2) + '元';
+          this.releaseName = "需支付￥" + (+money).toFixed(2) + 'THB';
         } else {
           this.releaseName = "立即发布"
         }
@@ -440,7 +440,7 @@
         if (!this.$route.query.rentingId) {
           if (money > 0) {
             try {
-              await showDialog("需要支付￥" + money.toFixed(2) + "元");
+              await showDialog("需要支付￥" + money.toFixed(2) + "THB");
               needPay = true;
             } catch (e) {
               return console.log("老板，我是要生存的，连" + money.toFixed(2) + "元都不给我，我不好办事啊")

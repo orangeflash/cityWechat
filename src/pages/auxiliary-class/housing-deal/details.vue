@@ -265,7 +265,7 @@
           switch (+result.identifying) {
             case 3:
               this.picker = [
-                {name: '价格', value: result.rent + '元/月'},
+                {name: '价格', value: result.rent + 'THB/月'},
                 {name: '户型', value: this.dataConversion(result.apartment, 'apartment')},
                 {name: '押金', value: result.deposit},
               ]
@@ -274,7 +274,7 @@
               break;
             case 4:    //求租
               this.picker = [
-                {name: '价格', value: result.rent + '元/月'},
+                {name: '价格', value: result.rent + 'THB/月'},
                 {name: '押金', value: result.deposit},
                 {name: '地区', value: result.area},
               ]
@@ -283,7 +283,7 @@
               break;
             case 5:   //新房
               this.picker = [
-                {name: '价格', value: isNaN(result.rent) ? result.rent : result.rent + '元/平'},
+                {name: '价格', value: isNaN(result.rent) ? result.rent : result.rent + 'THB/平'},
                 {name: '开盘时间', value: format(+result.openTime * 1000).split(" ")[0]},
                 {name: '状态', value: result.rentType},
               ]
@@ -304,7 +304,7 @@
 
           // this.picker = this.isLease
           //   ? [
-          //     {name: '价格', value: +result.rent || result.rent || '面议', after: +result.rent ? '元/月' : ''},
+          //     {name: '价格', value: +result.rent || result.rent || '面议', after: +result.rent ? 'THB/月' : ''},
           //     {
           //       name: isNaN(result.rent) ? '开盘时间' : '户型',
           //       value: isNaN(result.rent) ? format(+result.openTime * 1000).split(" ")[0] : this.dataConversion(result.apartment, 'apartment')
@@ -314,7 +314,7 @@
           //       value: result.deposit ? result.deposit : result.measure ? result.measure + 'm²' : result.rentType
           //     }
           //   ] : [
-          //     {name: '价格', value: +result.rent || '面议', after: +result.rent ? '元/月' : ''},
+          //     {name: '价格', value: +result.rent || '面议', after: +result.rent ? 'THB/月' : ''},
           //     {name: '押金', value: result.deposit},
           //     {name: '地区', value: result.area.split("-")[1]}
           //   ]
@@ -346,7 +346,7 @@
       },
       async goPay(money, param = {}) {
         try {
-          await showDialog("需要支付" + money.toFixed(2) + "元")
+          await showDialog("需要支付" + money.toFixed(2) + "THB")
           this.$router.push({
             name: 'cashier',
             params: {
@@ -363,7 +363,7 @@
             }
           });
         } catch (e) {
-          console.log("老板，" + money.toFixed(2) + "元都不愿给我，电话号码这件事，我很难帮你办啊！");
+          console.log("老板，" + money.toFixed(2) + "THB都不愿给我，电话号码这件事，我很难帮你办啊！");
         }
       },
       isLookTel() {

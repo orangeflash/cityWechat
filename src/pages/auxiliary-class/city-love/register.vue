@@ -15,11 +15,14 @@
           || '请选择你的出生日期'}}
         </dd-layout-div>
       </dd-layout-div>
-      <dd-layout-div :br="{bottom:'0.02rem solid #DAD9DD'}" class="mar-b" @click="areaPickerDialog = !areaPickerDialog">
-        <dd-layout-div class="dh w100 out-n br-n fon-xxl flex-y-center" :class="!registerInfo.city&&'col-bb'">
-          {{registerInfo.city || '请选择你的所在城市'}}
-        </dd-layout-div>
+      <dd-layout-div :br="{bottom:'0.02rem solid #DAD9DD'}" class="mar-b">
+        <input class="dh w100 out-n br-n fon-xxl" v-model="registerInfo.city" placeholder="请输入所在城市"/>
       </dd-layout-div>
+      <!--<dd-layout-div :br="{bottom:'0.02rem solid #DAD9DD'}" class="mar-b" @click="areaPickerDialog = !areaPickerDialog">-->
+        <!--<dd-layout-div class="dh w100 out-n br-n fon-xxl flex-y-center" :class="!registerInfo.city&&'col-bb'">-->
+          <!--{{registerInfo.city || '请选择你的所在城市'}}-->
+        <!--</dd-layout-div>-->
+      <!--</dd-layout-div>-->
       <div class="flex-bt flex-y-center mar-t pad-tb-30">
         <dd-layout-div class="fon-40 col-f flex-center" @click="registerInfo.sex = 1" :pad="[30,60,28]" :fillet="60"
                        :bg="registerInfo.sex == 1?$themeColor:'#DAD9DD'">

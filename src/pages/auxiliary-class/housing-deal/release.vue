@@ -47,7 +47,7 @@
         >
           <!--:disabled="fillData.backupsRen==0||params.faceToFace"-->
           <div slot="button" class="from-input_after">
-            <em>元/月</em>
+            <em>THB/月</em>
             <div
               @click="fillData.faceToFace = !fillData.faceToFace"
               :class="{'active':fillData.faceToFace}"
@@ -413,7 +413,7 @@
         console.log(index);
         this.fillData.wholeCountry = (index || 0) + 1;
         this.releasePrice = this.fillData.wholeCountry == 2 ? +this.price.country.release || 0 : +this.price.local.release || 0;
-        this.releaseName = this.releasePrice && !this.fillData.id ? '需要支付￥' + (+this.releasePrice).toFixed(2) + "元" : '立即发布';
+        this.releaseName = this.releasePrice && !this.fillData.id ? '需要支付￥' + (+this.releasePrice).toFixed(2) + "THB" : '立即发布';
       },
       async beginRelease() {
         showLoading();
@@ -422,7 +422,7 @@
         if (!isNaN(Number(result))) {
           if (!this.fillData.id && this.releasePrice > 0) {
             try {
-              await showDialog("需要支付" + this.releasePrice.toFixed(2) + "元");
+              await showDialog("需要支付" + this.releasePrice.toFixed(2) + "THB");
               this.$router.push({
                 name: 'cashier',
                 params: {
@@ -441,7 +441,7 @@
                 }
               });
             } catch (e) {
-              console.log("老板，我是要生存的，连" + this.releasePrice.toFixed(2) + "元都不给我，我不好办事啊")
+              console.log("老板，我是要生存的，连" + this.releasePrice.toFixed(2) + "THB都不给我，我不好办事啊")
             }
           } else {
             Toast.success({

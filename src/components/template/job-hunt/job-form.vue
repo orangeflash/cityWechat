@@ -335,7 +335,7 @@
         switch (key) {
           case 'salaryOption':
             data = [
-              {name: '面议'}, {name: '1K以下'}, {name: '1-2K'}, {name: '2-3K'}, {name: '3-5K'}, {name: '5-10K'}, {name: '10K以上'},
+              {name: '面议'}, {name: '10K以下'}, {name: '10-20K'}, {name: '20-30K'}, {name: '30-50K'}, {name: '50-100K'}, {name: '100K以上'},
             ]
             break;
           case 'huntTypeOption':

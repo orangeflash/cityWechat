@@ -13,8 +13,9 @@
         </div>
         <dd-layout-div v-else class="flex-bt flex-y-center pad-tb-30 mar-lr br-b-EFF3F6" @click="clickHandle(solo)">
           <div class="fon-b col-9">{{solo.label}}</div>
-          <div class="fon-b flex-y-center">{{solo.value || solo.default}}{{solo.unit || ''}}<i
+          <div  v-if="solo.field!='city'" class="fon-b flex-y-center">{{solo.value || solo.default}}{{solo.unit || ''}}<i
             class="iconfont icon-youjiantou2 col-9 mar-t-5"></i></div>
+          <input v-else class="out-n br-n t-r" v-model="solo.value" placeholder="请输入所在城市"/>
         </dd-layout-div>
       </dd-layout-div>
     </dd-layout-div>

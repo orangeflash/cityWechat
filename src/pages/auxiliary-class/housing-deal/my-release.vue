@@ -204,7 +204,7 @@
       },
       async generateTopOrder(item) {
         try {
-          await showDialog('需要支付：' + (+item.data.money).toFixed(2) + " 元");
+          await showDialog('需要支付：' + (+item.data.money).toFixed(2) + " THB");
           console.log(item);
           showLoading();
           const order = await this.housingDealTop({
@@ -226,7 +226,7 @@
             }
           });
         } catch (e) {
-          console.log("老板，" + item.data.money + "元都不愿给我，置顶帖子这件事，我很难帮你办啊！");
+          console.log("老板，" + item.data.money + "THB都不愿给我，置顶帖子这件事，我很难帮你办啊！");
         }
       },
       async refreshPost() {
@@ -239,7 +239,7 @@
         let money = +this.itemInfo.cityId > 0 ? result.local && result.local.refresh || 0 : result.country && result.country.refresh || 0;
         if (money > 0) {
           try {
-            await showDialog('需要支付：' + (+money).toFixed(2) + " 元");
+            await showDialog('需要支付：' + (+money).toFixed(2) + " THB");
             console.log(this.itemInfo);
             this.$router.push({
               name: 'cashier',
